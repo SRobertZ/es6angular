@@ -1,0 +1,7 @@
+node_modules/
+bower_components/
+.idea/
+dist/
+npm-debug.log
+/temp
+/tmp

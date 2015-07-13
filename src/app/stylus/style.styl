@@ -1,0 +1,603 @@
+@import "nib"
+
+color1 = #5C68FF
+clink = #5C68FF
+ctext = #373841
+ctextlight = #979797
+bdcolor = #ccc
+bdcolorlight = #EBEBEB
+
+wrapMax = 1170px
+wrapMin = 760px
+wrap = 1000px
+
+fftext = 'Ubuntu', sans-serif
+
+*
+  margin 0
+  padding 0
+  outline none
+  font-size 1.6rem
+  font-weight 300
+
+html
+  font-size 10px
+  height 100%
+body
+  position relative
+  background #F7F7F7
+  font-family fftext
+  color ctext
+  font-size 1.6rem
+  min-width wrapMin
+  height 100%
+  overflow auto
+
+h1
+  font-weight 300
+  font-size 3.6rem
+  margin 0 0 20px
+  strong
+    font-size 3.6rem
+    font-weight bold
+
+
+h2
+  font-weight 300
+  font-size 3rem
+  margin 0 0 20px
+h3
+  font-weight 400
+  font-size 2.4rem
+  margin 0 0 15px
+
+
+a
+  color clink
+  transition .1s
+  text-decoration none
+  &:hover
+    color clink + 20%
+  img
+    border none
+
+ul li
+  list-style none
+
+
+div, header, footer, nav, aside, article, section, main
+  position relative
+
+.hidden
+  display none!important
+.show
+  display block!important
+
+.a_center
+  text-align center
+.a_left
+  text-align left
+.a_right
+  text-align right
+
+.f-left
+  float left
+.f-right
+  float right
+
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="search"], input[type="number"], textarea
+  height 48px
+  padding 0 20px
+  font-size 1.4rem
+  font-family fftext
+  color ctext
+  background-color #eaeaea
+  border none
+  transition .3s
+  box-sizing border-box
+  border-radius 3px
+  &:focus
+    background #e2e2e2
+textarea
+  padding 15px 20px
+  height 80px
+  resize none
+
+.button, input[type='submit']
+  position relative
+  display inline-block
+  vertical-align top
+  height 48px
+  line-height 46px
+  padding 0 20px
+  color #fff
+  font-family fftext
+  font-size 1.6rem
+  font-weight 400
+  text-decoration none
+  box-sizing border-box
+  background color1
+  border-radius 3px
+  border none
+  cursor pointer
+  transition .2s
+  appearance none
+  &:hover
+    color #fff
+    background-color color1 - 5%
+
+  &.second
+    background-color #000
+    color #fff
+    &:hover
+      background-color #222
+
+
+.wrap
+  margin 0 auto
+  width 95%
+  box-sizing border-box
+  max-width wrapMax
+  min-width wrapMin
+.w100
+  width 100%
+.w50
+  width 50%
+
+.dropdown_link ~ .dropdown_block
+  display none
+
+// ----------------------------------
+
+header
+  background url(../images/header_back2.jpg) no-repeat center 0
+  background-attachment fixed
+  background-size cover
+  color #fff
+  margin 0 0 4.5rem
+  @media screen and (max-width: 900px)
+    background-attachment scroll
+
+  a
+    color #fff
+    &:hover
+      color #fff
+      text-decoration underline
+  .top
+    height 130px
+    border-bottom 1px solid rgba(255,255,255,0.25)
+  .logo
+    position absolute
+    top 25px
+    left 0
+    width 252px
+    height 79px
+    background url(../images/logo.png) no-repeat 0 0
+    background-size 252px 79px
+    text-indent -10000em
+  .menu
+    position absolute
+    top 60px
+    left calc(50% - 120px)
+    @media screen and (max-width: 900px)
+      display none
+    li
+      display inline-block
+      margin 0 20px 0 0
+    a
+      font-size 1.8rem
+  .get_info
+    position absolute
+    right 0
+    top 60px
+    font-size 1.8rem
+
+  .slideshow
+    .slides
+      margin 0 40px
+      box-sizing border-box
+    h1
+      font-size 4.8rem
+      font-weight 300
+      line-height 5.2rem
+      margin 0 0 10px
+    h3
+      font-size 2.4rem
+      font-weight 300
+      line-height 3.5rem
+
+    .owl-carousel .owl-wrapper
+      align-items flex-start
+
+
+    .slide_text
+      margin 100px 0 0 3%
+      width 50%
+      float left
+    .slide_img
+      float right
+      margin 60px 3% 5rem 0
+      width 42%
+      text-align center
+      img
+        max-width 100%
+        max-height 100%
+    @media screen and (max-width:1000px)
+      .slide_text
+        text-align center
+        margin 0 5% 5rem
+        width auto
+        float none
+        h1
+          font-size 4rem
+      .slide_img
+        float none
+        width auto
+        margin 3rem 5% 5rem
+        height 200px
+
+    .owl-pagination
+      position absolute
+      width 100%
+      bottom 20px
+      text-align center
+      .owl-page
+        display inline-block
+        margin 0 5px
+        width 9px
+        height 9px
+        border-radius 10px
+        background rgba(#fff,0.4)
+      .active
+        background #fff
+    .slide_left,
+    .slide_right
+      position absolute
+      width 17px
+      height 57px
+      bottom 200px
+      &:hover
+        opacity 0.6
+    .slide_left
+      left -40px
+      background url(../images/slide_left.svg) no-repeat 0 0
+    .slide_right
+      right -40px
+      background url(../images/slide_right.svg) no-repeat 0 0
+
+.text_block
+  background #fff
+  border 1px solid bdcolorlight
+  padding 7rem 8rem
+  margin 0 0 4.5rem
+  @media screen and (max-width: 900px)
+    padding 5rem
+
+  p
+    line-height 2.4rem
+    margin 0 0 1.5rem
+
+.main_text
+  background #fff url(../images/we.jpg) no-repeat 0px center
+  padding 4rem 8rem 3rem 40rem
+
+
+.services
+  padding-bottom 3rem
+  .brochure.button
+    float right
+    width 248px
+    &:before
+      content ''
+      width 20px
+      height 23px
+      display inline-block
+      vertical-align middle
+      margin 0 13px 0 0
+      background url(../images/icon_brochure.svg) no-repeat 0 0
+  p
+    color ctextlight
+
+  .list_services
+    padding 2rem 0 0
+    clearfix()
+    .item
+      float left
+      box-sizing border-box
+      width 50%
+      padding 5rem 2rem 5rem 10rem
+      border-top 1px solid bdcolorlight
+      &:nth-child(2n)
+        padding-right 0
+        padding-left 11rem
+      &:nth-child(2n+1)
+        clear left
+
+      &.serv1
+        background url(../images/icon_serv1.svg) no-repeat 0 5rem
+        border-top none
+      &.serv2
+        background url(../images/icon_serv2.svg) no-repeat 3rem 5rem
+        border-top none
+      &.serv3
+        background url(../images/icon_serv3.svg) no-repeat 1rem 5rem
+      &.serv4
+        background url(../images/icon_serv4.svg) no-repeat 1.5rem	 5rem
+      h2
+        font-family 'Montserrat'
+        font-size 1.6rem
+        font-weight normal
+        text-transform uppercase
+        letter-spacing 1px
+        margin 0 0 1rem
+      p:last-child
+        margin 0
+
+.projects
+  margin 0 0 6rem
+  .title
+    border-bottom 1px solid bdcolor + 30%
+    margin 0 0 6rem
+    height 2.5rem
+    text-align center
+    h1
+      margin 0
+      padding 0 3rem
+      background #F7F7F7
+      display inline-block
+
+  .list_projects
+    display flex
+    justify-content space-between
+    .item
+      width 18.5%
+      img
+        max-width 100%
+        height auto
+
+.global
+  margin 0 0 4.5rem
+  background url(../images/back_global.jpg) no-repeat 0 0
+  background-size cover
+  clearfix()
+  .complete
+    background rgba(105,105,154,0.5)
+    float left
+    width 60%
+    height 380px
+    color #fff
+    display flex
+    justify-content space-around
+    padding 10rem 3rem
+    box-sizing border-box
+    @media screen and (max-width: 1000px)
+      padding 10rem 2rem
+    .item
+      float left
+      text-align center
+      padding 8rem 0 0
+
+      p
+        font-size 1.4rem
+        font-weight bold
+    strong
+      display block
+      font-size 4.8rem
+      color color1
+      margin 0 0 0.5rem
+    .complete_projects
+      background url(../images/icon_projects.png) no-repeat center 1.8rem
+      background-size 50px
+    .complete_code
+      background url(../images/icon_code.png) no-repeat center 1.8rem
+      background-size 50px
+    .complete_cup
+      background url(../images/icon_cup.png) no-repeat center 0
+      background-size 45px
+  .skills
+    background rgba(164,164,226,0.4)
+    padding 4rem 8.5rem 3rem
+    float right
+    width 40%
+    box-sizing border-box
+    height 380px
+    color #fff
+    @media screen and (max-width: 1100px)
+      padding 4rem 5rem 3rem
+    .item
+      margin 0 0 2rem
+      .progress
+        width 100%
+        height 6px
+        border-radius 10px
+        margin 0 0 .5rem
+        background rgba(255,255,255,0.1)
+        div
+          background color1
+          height 6px
+          border-radius 10px
+      p
+        color ctextlight + 20%
+        @media screen and (max-width: 1000px)
+          font-size 14px
+        strong
+          display inline-block
+          margin-left 10px
+          color #fff
+          font-weight bold
+.technology
+  display flex
+  justify-content space-between
+  align-items center
+  margin 0 0 4.5rem
+  img
+    margin 0 20px
+    height auto
+
+.team
+  // padding-bottom 0
+  background linear-gradient(top, #fff 50%, #eee 100%)
+  h1
+    text-align center
+    margin 0 0 5rem
+    &~p
+      width 60%
+      color ctextlight
+      text-align center
+      display block
+      margin 0 auto
+      @media screen and (max-width: 900px)
+        width 90%
+  .team_list
+
+    display flex
+    align-items flex-end
+    margin 8rem 0 0
+
+    display none!important
+    clearfix()
+    .item
+      overflow hidden
+      text-align center
+      .desc
+        bottom 20px
+        position absolute
+        padding 2rem 3rem
+        box-sizing border-box
+        left 40px
+        right 40px
+        text-align center
+        animation-name flipOutX
+        animation-duration .7s
+        animation-fill-mode both
+
+      &:hover .desc
+
+        opacity 1
+        backface-visibility visible!important
+        animation-name flipInX
+        animation-duration 1.5s
+        animation-fill-mode both
+      .back
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+        background rgba(color1 - 20%,0.5)
+        transform skewX(-15deg)
+      .name
+        color #fff
+        font-weight bold
+        margin 0 0 .5rem
+      .post
+        color yellow
+        font-size 1.4rem
+  .slide_left,
+  .slide_right
+    position absolute
+    width 15px
+    height 57px
+    bottom 100px
+    &:hover
+      opacity 0.6
+  .slide_left
+    left -40px
+    background url(../images/slide_left_dark.svg) no-repeat 0 0
+  .slide_right
+    right -40px
+    background url(../images/slide_right_dark.svg) no-repeat 0 0
+.feedback
+  background url(../images/contact_back.jpg) no-repeat 0 0
+  background-size cover
+  background-attachment fixed
+  padding 6rem
+  color #fff
+  margin 0 0 4.5rem
+  @media screen and (max-width: 900px)
+    background-attachment scroll
+  h1
+    text-align center
+    margin 0 0 5rem
+  form
+    width 80%
+    margin 0 auto
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'],
+  textarea
+    float left
+    border 1px solid #fff
+    background transparent
+    width 32%
+    margin-right 2%
+    margin-bottom 2rem
+    color #fff
+    border-radius 0
+    &:nth-child(3n)
+      margin-right 0
+    &:focus
+      background rgba(#000, 0.1)
+    &::-webkit-input-placeholder
+      color #fff
+    &:-moz-placeholder
+      color #fff
+  textarea
+    width 100%
+    height 100px
+  .submit
+    clear both
+    text-align center
+    .button
+      padding-left 4rem
+      padding-right 4rem
+  .info
+    text-align center
+    padding 3rem 0 0
+    font-weight 600
+
+.footer
+  background #fff
+  padding 3rem 0
+  border-top 1px solid bdcolorlight
+  clear both
+  & *
+    font-size 1.3rem
+  clearfix()
+  .contacts
+    float left
+    .mail
+      display inline-block
+      padding-left 20px
+      background url(../images/icon_mail.svg) no-repeat 0 center
+      color ctextlight
+      &:hover
+        color color1
+
+  .copyright
+    float right
+    color ctextlight
+
+.download_brochure
+  width 300px
+  text-align center
+  p
+    color ctextlight
+    line-height 2rem
+    font-size 1.4rem
+  form
+    padding 3rem 0 0
+  input[type='email']
+    width 170px
+
+
+@keyframes fullWidth {
+  from {
+    width 0
+  }
+
+}
+.fullWidth
+  animation-name fullWidth

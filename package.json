@@ -1,0 +1,19 @@
+{
+  "name": "es6angular",
+  "version": "1.0.0",
+  "description": "using es6 in angularJs",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Sabiryanov",
+  "license": "ISC",
+  "browser": {
+    "q": "./node_modules/q/q.js"
+  }
+}
