@@ -1,6 +1,7 @@
+import accountService from '../../services/accountService.factory.js';
 
 class SigninController{
-constructor($scope, accountService, $state){
+constructor($scope, $state){
     this.$state= $state;
     this.scope=$scope;
     this.init();
@@ -27,6 +28,4 @@ constructor($scope, accountService, $state){
 
 SigninController.$inject=['$scope', 'accountService', '$state'];
 
-angular.module('account').controller('SigninController', ['$scope', 'accountService', '$state', function () {
-
-}]);
+export {SigninController}
