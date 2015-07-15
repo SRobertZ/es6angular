@@ -36,7 +36,7 @@ function bundle(option) {
 		});
 	}
 	bfy.transform(babelify.configure({
-		ignore: ['**/node_modules/**', '**/bower_components/**', '**/bower_modules/**', 'common.min.js']
+		ignore: ['**/node_modules/**', '**/bower_components/**', '**/bower_modules/**']
 	}));
 
 	return processBundle(bfy, option);

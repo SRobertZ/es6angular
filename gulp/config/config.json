@@ -5,13 +5,10 @@
   "appDir": "./src/app",
   "destPathName" : "./dist",
   "tmp": "./.tmp",
-  "debug":false,
+  "debug":true,
   "minify":false,
   "freeze": false,
   "map": true,
   "watch": false,
-  "livereload": false,
-  "commonDist":"../FrontEndCommon/dist",
-  "commonSource":"../FrontEndCommon/src",
-  "url":"http://developer.modulbank.ru:"
+  "livereload": false
 }

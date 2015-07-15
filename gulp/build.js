@@ -5,24 +5,22 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var bowerFiles = require('main-bower-files');
 var nib = require('nib');
-var sourcemaps= require('gulp-sourcemaps');
-var stylus= require('gulp-stylus');
+var sourcemaps = require('gulp-sourcemaps');
+var stylus = require('gulp-stylus');
 var gulp = require('gulp');
 var templateCache = require('gulp-angular-templatecache');
+var config = require('./configurationManager').get();
+var del = require('del');
 
 
 /** Config variables **/
 var path = require('path'),
-    tmpDir = './.tmp',
-    destPathName = 'dist',
+    destPathName = config.destPathName,
     destDir = './' + destPathName,
-    appDir = './app',
+    appDir = config.appDir,
     bowerDir = appDir + '/bower_components';
-expressSrc = path.join(__dirname, destDir),
-    port = 9009,
-    lrPort = 4009,
 
-    gulp.task('clean', require('del').bind(null, [tmpDir, destDir]));
+gulp.task('clean', del.bind(null, [destDir], {force: true}));
 
 gulp.task('img', function () {
     return gulp.src([appDir + '/img/**/*.*'])
@@ -41,23 +39,23 @@ gulp.task('html', function () {
 });
 
 gulp.task('templateCache', function () {
-    return gulp.src(appDir+'/js/**/*.html')
+    return gulp.src(appDir + '/js/**/*.html')
         .pipe(templateCache('main.templates.js', {
             module: 'main.templates'
         }))
-        .pipe(gulp.dest(destDir+'/js'));
+        .pipe(gulp.dest(destDir + '/js'));
 });
 
-gulp.task('build-es6',['modules-configs'], function () {
-    config.entryPoint= appDir + '/js/main.js';
-    config.bundleName= 'bundle.js';
-    config.bundleNameMin= 'bundle.min.js';
-    config.destPathName= destPathName+'/js';
+gulp.task('build-es6', function () {
+    config.entryPoint = appDir + '/js/app.js';
+    config.bundleName = 'bundle.js';
+    config.bundleNameMin = 'bundle.min.js';
+    config.destPathName = destPathName + '/js';
     return bundler(config);
 });
 
-var bundler= require('./es6bundler');
+var bundler = require('./es6bundler');
 
 gulp.task('build', function (cb) {
-    runSequence( ['img', 'stylus', 'html','templateCache','build-es6'], 'inject', 'rev', 'afterBuild', cb);
+    runSequence(['img', 'stylus', 'html', 'templateCache', 'build-es6'], 'inject', cb);
 });
