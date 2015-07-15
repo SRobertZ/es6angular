@@ -7,7 +7,27 @@
     "gulp": "^3.9.0",
     "q": "^1.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "browserify": "^10.2.6",
+    "colors": "^1.1.2",
+    "del": "^1.2.0",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-if": "^1.2.5",
+    "gulp-inject": "^1.3.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.6",
+    "lodash.assign": "^3.2.0",
+    "main-bower-files": "^2.9.0",
+    "nib": "^1.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

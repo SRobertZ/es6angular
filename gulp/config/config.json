@@ -1,0 +1,17 @@
+{
+  "servePort": 80,
+  "liveReloadPort": 4009,
+  "url":"http://developer.modulbank.ru",
+  "appDir": "./src/app",
+  "destPathName" : "./dist",
+  "tmp": "./.tmp",
+  "debug":false,
+  "minify":false,
+  "freeze": false,
+  "map": true,
+  "watch": false,
+  "livereload": false,
+  "commonDist":"../FrontEndCommon/dist",
+  "commonSource":"../FrontEndCommon/src",
+  "url":"http://developer.modulbank.ru:"
+}
