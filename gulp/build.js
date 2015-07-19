@@ -40,7 +40,7 @@ gulp.task('html', function () {
 
 gulp.task('templateCache', function () {
     return gulp.src(appDir + '/js/**/*.html')
-        .pipe(templateCache('main.templates.js', {
+        .pipe(templateCache('templates.js', {
             module: 'main.templates'
         }))
         .pipe(gulp.dest(destDir + '/js'));
@@ -57,5 +57,5 @@ gulp.task('build-es6', function () {
 var bundler = require('./es6bundler');
 
 gulp.task('build', function (cb) {
-    runSequence(['img', 'stylus', 'html', 'templateCache', 'build-es6'], 'inject', cb);
+    runSequence(['img', 'stylus', 'html', 'templateCache', 'build-es6'], 'injects', cb);
 });
