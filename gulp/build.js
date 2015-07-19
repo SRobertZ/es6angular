@@ -33,6 +33,10 @@ gulp.task('stylus', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destDir + '/css'));
 });
+gulp.task('css', function () {
+    return gulp.src([appDir + '/css/site.css'])
+        .pipe(gulp.dest(destDir+ '/css'))
+});
 gulp.task('html', function () {
     return gulp.src([appDir + '/index.html'])
         .pipe(gulp.dest(destDir))
@@ -44,6 +48,10 @@ gulp.task('templateCache', function () {
             module: 'main.templates'
         }))
         .pipe(gulp.dest(destDir + '/js'));
+});
+gulp.task('bower_components', function () {
+    return gulp.src([appDir + '/bower_components/**/*.*'])
+        .pipe(gulp.dest(destDir + '/bower_components/'))
 });
 
 gulp.task('build-es6', function () {
@@ -57,5 +65,5 @@ gulp.task('build-es6', function () {
 var bundler = require('./es6bundler');
 
 gulp.task('build', function (cb) {
-    runSequence(['img', 'stylus', 'html', 'templateCache', 'build-es6'], 'injects', cb);
+    runSequence(['img', 'css', 'html','bower_components', 'templateCache', 'build-es6'], 'injects', cb);
 });

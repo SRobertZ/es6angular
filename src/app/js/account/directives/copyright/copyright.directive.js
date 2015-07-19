@@ -3,9 +3,9 @@
  */
 
 class Copyright {
-    constructor() {
+    constructor($templateCache) {
         this.restrict = 'E';
-        this.templateUrl = 'js/modules/account/directives/copyright.html';
+        this.template = $templateCache.get('account/directives/copyright/copyright.directive.html');
         this.scope = {};
         this.controller = ['$scope', function ($scope) {
             $scope.copyright = function () {
@@ -18,10 +18,11 @@ class Copyright {
 
     }
 
-    static createInstance(/*$templateCache*/) {
-        return new Copyright();
+    static createInstance($templateCache) {
+        return new Copyright($templateCache);
     }
 }
+Copyright.$inject=['$templateCache'];
 
 export {Copyright}
 

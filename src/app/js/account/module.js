@@ -8,5 +8,5 @@ import {Copyright} from './directives/copyright/copyright.directive.js';
 
 angular.module('account').controller('SigninController', SigninController);
 angular.module('account').controller('SignupController', SignupController);
-angular.module('account').directive('copyright', Copyright.createInstance());
+angular.module('account').directive('copyright', Copyright.createInstance);
 

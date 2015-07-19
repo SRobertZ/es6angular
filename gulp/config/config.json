@@ -1,7 +1,7 @@
 {
-  "servePort": 80,
-  "liveReloadPort": 4009,
-  "url":"http://developer.modulbank.ru",
+  "servePort": 5000,
+  "liveReloadPort": 5001,
+  "url":"http://localhost",
   "appDir": "./src/app",
   "destPathName" : "./dist",
   "tmp": "./.tmp",

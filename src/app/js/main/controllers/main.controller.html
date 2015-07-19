@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row row-centered">
+        <div class="col-xs-3 col-centered">
+            <h2>{{Text}}</h2>
+        </div>
+        <div class="col-xs-3 col-centered">
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success" ng-click="showSuccess()">Success</button>
+            <!-- Contextual button for informational alert messages -->
+            <button type="button" class="btn btn-info" ng-click="info()">Info</button>
+            <!-- Indicates caution should be taken with this action -->
+            <button type="button" class="btn btn-warning" ng-click="notice()">Warning</button>
+            <!-- Indicates a dangerous or potentially negative action -->
+            <button type="button" class="btn btn-danger" ng-click="error()">Danger</button>
+        </div>
+    </div>
+    <myfooter></myfooter>
+</div>
