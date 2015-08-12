@@ -1,6 +1,7 @@
 import accountService from '../../services/accountService.factory.js';
 
 var _state = new WeakMap();
+
 class SigninController {
     constructor($state) {
         _state.set(this, $state);
