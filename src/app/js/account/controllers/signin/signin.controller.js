@@ -1,31 +1,19 @@
-import accountService from '../../services/accountService.factory.js';
-
 var _state = new WeakMap();
+var _accountService = new WeakMap();
 
 class SigninController {
-    constructor($state) {
+    constructor($state, accountService) {
         _state.set(this, $state);
+        _accountService.set(this, accountService);
     }
 
-    showPassword() {
-        var key_attr = $('#key').attr('type');
-        if (key_attr != 'text') {
-            $('.checkbox').addClass('show');
-            $('#key').attr('type', 'text');
-        } else {
-            $('.checkbox').removeClass('show');
-            $('#key').attr('type', 'password');
-        }
-    };
-
-    login(){
-        var that=this;
-        accountService.login().then(()=> {
-            _state.get(that).go('main.list');
+    login() {
+        _accountService.get(this).login().then(()=> {
+            _state.get(this).go('main.list');
         });
     };
 }
 
-SigninController.$inject = ['$state'];
+SigninController.$inject = ['$state', 'accountService'];
 
 export {SigninController}

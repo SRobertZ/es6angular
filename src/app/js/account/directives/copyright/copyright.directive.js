@@ -2,8 +2,11 @@
  * Created by RobertSabiryanov on 13.07.15.
  */
 
+var _accountService = new WeakMap();
+
 class Copyright {
-    constructor($templateCache) {
+    constructor($templateCache, accountService) {
+        _accountService.set(this, accountService);
         this.restrict = 'E';
         this.template = $templateCache.get('account/directives/copyright/copyright.directive.html');
         this.scope = {};
@@ -15,14 +18,19 @@ class Copyright {
     }
 
     link(scope) {
-
+        scope.doSomething = function () {
+            //какой-нибудь код
+            var accountService= _accountService.get(Copyright.instance);
+            //какой-нибудь код
+        }
     }
 
-    static createInstance($templateCache) {
-        return new Copyright($templateCache);
+    static createInstance($templateCache, accountService) {
+        Copyright.instance = new Copyright($templateCache, accountService);
+        return Copyright.instance;
     }
 }
-Copyright.$inject=['$templateCache'];
+Copyright.$inject = ['$templateCache', 'accountService'];
 
 export {Copyright}
 

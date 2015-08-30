@@ -3,8 +3,13 @@
  */
 import api from './accountApi.factory.js';
 
-export default {
-  login(){
-      return api.login();
-  }
+class AccountService {
+    login(){
+        return api.login();
+    }
+    signup(){
+        return api.signup();
+    }
 }
+
+export {AccountService}

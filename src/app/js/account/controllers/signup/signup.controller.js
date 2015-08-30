@@ -3,26 +3,22 @@
  */
 
 class SignupController {
-    constructor($scope) {
+    constructor($scope, $state, accountService) {
+        this.init($scope, $state, accountService);
     }
 
-    showPassword() {
-        var key_attr = $('#key').attr('type');
-        if (key_attr != 'text') {
-            $('.checkbox').addClass('show');
-            $('#key').attr('type', 'text');
-        } else {
-            $('.checkbox').removeClass('show');
-            $('#key').attr('type', 'password');
-        }
-    };
+    init($scope, $state, accountService) {
 
-    signup() {
+        $scope.signup = function () {
+            accountService.signup().then(()=> {
+                $state.go('main.list');
+            });
+        };
 
-    };
+    }
 }
 
-SignupController.$inject = [];
+SignupController.$inject = ['$scope', '$state', 'accountService'];
 
 export {SignupController}
 

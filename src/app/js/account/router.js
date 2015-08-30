@@ -13,6 +13,6 @@ angular.module('account').run(['stateAdapter','$templateCache', function (stateA
     }).state('access.signup', {
         url: '/signup',
         template: $templateCache.get('account/controllers/signup/signup.controller.html'),
-        controller: 'SignupController as signup'
+        controller: 'SignupController'
     });
 }]);
