@@ -12,10 +12,10 @@ angular.module('account').controller('SignupController', SignupController);
 angular.module('account').directive('copyright', Copyright.createInstance);
 angular.module('account').service('accountService',  AccountService);
 //angular.module('account').factory('accountService',  function(){return new AccountService()});
-//angular.module('account').provider('accountService',  providerFactoryInstanceBuilder(AccountService));
+//angular.module('account').provider('accountService',  providerBuilder(AccountService));
 
 
-//function providerFactoryInstanceBuilder(obj) {
+//function providerBuilder(obj) {
 //    return function () {
 //        this.$get = [function () {
 //            return new obj();

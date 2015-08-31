@@ -15,5 +15,4 @@ class SigninController {
 }
 
 SigninController.$inject = ['$state', 'accountService'];
-
 export {SigninController}
