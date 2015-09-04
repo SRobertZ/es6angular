@@ -30,7 +30,7 @@ class Copyright {
         return Copyright.instance;
     }
 }
-Copyright.$inject = ['$templateCache', 'accountService'];
+Copyright.createInstance.$inject = ['$templateCache', 'accountService'];
 
 export {Copyright}
 
